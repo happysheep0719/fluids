@@ -70,10 +70,10 @@ struct Particle{
                 (3.f * powf(powf(RADIUS, 2.f) - powf(distance, 2.f), 2.f)) * (-2.f * distance);
                 
                 laplacian += (1.f / particles[i].density ) * particles[i].pressure * sk;
-                laplacian *= PARTICLE_MASS;
-                
             }
         }
+        
+        laplacian *= PARTICLE_MASS;
         
         return laplacian;
     }
